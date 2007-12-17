@@ -17,7 +17,6 @@ License:	GPL
 Group:		Games/Puzzles
 BuildRequires:	SDL_image-devel SDL_mixer-devel X11-devel alsa-lib-devel esound-devel
 Packager:	Guillaume Cottenceau <gc@mandrakesoft.com>
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This game was first released as "Mindbender" in the year 1989 on the Amiga
