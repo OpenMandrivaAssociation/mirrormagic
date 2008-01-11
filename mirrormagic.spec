@@ -44,14 +44,15 @@ pushd %{_gamesdatadir}/%{name}
 popd
 EOF
 
-%{__install} -d $RPM_BUILD_ROOT%{_menudir}
-%{__cat} <<EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" \
-		icon=%{name}.png \
-		needs="x11" \
-		section="Amusement/Puzzles" \
-		title="Mirror Magic"\
-		longtitle="%{Summary}"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_gamesbindir}/%{name}
+Icon=%{name}
+Categories=Game;LogicGame;
+Name=Mirror Magic
+Comment=%{Summary}
 EOF
 
 %{__install} %{SOURCE1} -D $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
@@ -73,7 +74,7 @@ EOF
 %defattr(644,root,root,755)
 %doc README
 %{_gamesdatadir}/%{name}
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
