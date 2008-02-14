@@ -15,6 +15,7 @@ Source3:	%{name}-48x48.png
 URL:		http://www.artsoft.org/mirrormagic/
 License:	GPL
 Group:		Games/Puzzles
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	SDL_image-devel SDL_mixer-devel X11-devel alsa-lib-devel esound-devel
 
 %description
