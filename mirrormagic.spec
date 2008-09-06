@@ -25,7 +25,6 @@ game "Deflektor".
 %prep
 %setup -q
 %patch0 -p1 -b .gcc4
-#perl -pi -e "s/^OPTIONS.*/OPTIONS = $RPM_OPT_FLAGS/" src/Makefile
 
 %build
 %{__make} OPTIONS="%{optflags} -O3" sdl
