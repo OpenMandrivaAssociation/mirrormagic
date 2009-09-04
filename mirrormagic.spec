@@ -1,7 +1,7 @@
 Name:		mirrormagic
 Summary:	A puzzle game with mirrors and ray of lights
 Version:	2.0.2
-Release:	%{mkrel 4}
+Release:	%{mkrel 5}
 Source0:	http://www.artsoft.org/RELEASES/unix/mirrormagic/%{name}-%{version}.tar.bz2
 Source1:	%{name}-16x16.png
 Source2:	%{name}-32x32.png
