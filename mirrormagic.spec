@@ -7,15 +7,13 @@ Source1:	%{name}-16x16.png
 Source2:	%{name}-32x32.png
 Source3:	%{name}-48x48.png
 Patch0:		mirrormagic-2.0.2-debian-gcc4.patch
+Patch1:		mirrormagic-2.0.2-str-fmt.patch
 URL:		http://www.artsoft.org/mirrormagic/
 License:	GPL+
 Group:		Games/Puzzles
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
-BuildRequires:	X11-devel
-BuildRequires:	alsa-lib-devel
-BuildRequires:	esound-devel
 
 %description
 This game was first released as "Mindbender" in the year 1989 on the Amiga
@@ -25,9 +23,10 @@ game "Deflektor".
 %prep
 %setup -q
 %patch0 -p1 -b .gcc4
+%patch1 -p0 -b .str
 
 %build
-%{__make} OPTIONS="%{optflags} -O3" sdl
+%{__make} OPTIONS="%{optflags}" sdl
 
 %install
 %{__rm} -rf %{buildroot}
