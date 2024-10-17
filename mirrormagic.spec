@@ -8,7 +8,7 @@ Source2:	%{name}-32x32.png
 Source3:	%{name}-48x48.png
 Patch0:		mirrormagic-2.0.2-debian-gcc4.patch
 Patch1:		mirrormagic-2.0.2-str-fmt.patch
-URL:		http://www.artsoft.org/mirrormagic/
+URL:		https://www.artsoft.org/mirrormagic/
 License:	GPL+
 Group:		Games/Puzzles
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
